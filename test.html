@@ -20,9 +20,17 @@
     <link rel="stylesheet" href="css/plugin.min.css">
     <link rel="stylesheet" href="style.css">
     <link rel="icon" type="image/png" sizes="16x16" href="img/favicon.svg">
-
-    <!-- Google tag (gtag.js) -->
+ <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-PEG551NQ3N"></script>
+    <style>
+         .unavailable {
+    color: red;
+}
+
+.available {
+    color: green;
+}
+    </style>
     <script>
         window.dataLayer = window.dataLayer || [];
 
@@ -194,15 +202,16 @@
                         <div class="col-12 mb-25">
                             <div class="card border-0 px-25 pb-10 h-100">
                                 <div class="card-header px-0 border-0">
-                                    <h6>Content For<span style="color: #ff6600; font-size: larger;">PUC-1</span></h6>
+                                    <h6>Content For<span
+                                            style="color: #ff6600; font-size: larger;">PUC-1</span></h6>
                                     <div class="card-extra">
                                         <ul class="card-tab-links nav-tabs nav" role="tablist">
                                             <li>
-                                                <a class="active" href="#" data-bs-toggle="tab"
+                                                <a class="active" href="#t_selling-today2" data-bs-toggle="tab"
                                                     id="semOneTab" role="tab" aria-selected="true">Sem - 1</a>
                                             </li>
                                             <li>
-                                                <a href="#" data-bs-toggle="tab" id="semTwoTab"
+                                                <a href="#t_selling-week2" data-bs-toggle="tab" id="semTwoTab"
                                                     role="tab" aria-selected="true">Sem - 2</a>
                                             </li>
                                         </ul>
@@ -215,22 +224,33 @@
                                             <div class="selling-table-wrap selling-table-wrap--source">
                                                 <div class="table-responsive">
                                                     <table class="table table--default table-borderless">
-                                                        <div id="data-container"></div>
-                                                    </table>
-                                                </div>
+                                                      <div id="data-container"></div>
+                                                     </table>
+                                                 </div>
                                             </div>
-                                        </div>
+                                         </div>
                                     </div>
                                 </div>
-                            </div>
+                            </div>  
                         </div>
 
 
-                    </div>
 
+                    </div>
                 </div>
             </div>
         </div>
+
+
+
+
+
+
+
+
+
+
+        
         <!-- Main content End-->
 
         <!-- Footer Section -->
@@ -302,7 +322,7 @@
     <script src="js/plugins.min.js"></script>
     <script src="js/script.min.js"></script>
 
-    <!-- Fetching Data From JSON Starts -->
+    
     <script>
         // Function to calculate time difference and return a formatted string
         function getTimeDifference(lastUpdate) {
@@ -338,7 +358,7 @@
 
         // Function to fetch JSON data
         function fetchData(sem) {
-            fetch('./Content/Puc_1.json')
+            fetch('data.json')
                 .then(response => response.json())
                 .then(data => {
                     const semData = data[sem];
@@ -396,7 +416,7 @@
             fetchData('semTwo');
         });
     </script>
-    <!-- Fetching Data From JSON Ended -->
+
 
 </body>
 
